@@ -1,0 +1,32 @@
+---
+- name: Copia fichero grande usando samba con win_copy remoto
+  hosts: all
+  tasks:
+
+    # Revisar - no se puede utilizar con una sesion no interactiva tipo WinRM
+    #  - name: Mount Samba share
+    #    community.windows.win_mapped_drive:
+    #      letter: Z
+    #      path: \\172.25.250.9\test
+    #      username: sambauser
+    #      password: redhat
+    #      state: present
+    #
+  
+  - name: Copia desde el recurso samba
+    ansible.windows.win_copy:
+      src: \\172.25.250.9\test\kvm.iso.gz
+      dest: C:\Users\student\Desktop\kvm.iso.gz
+      remote_src: true
+    become: yes
+    become_method: runas
+    become_flags: logon_type=new_credentials logon_flags=netcredentials_only
+    vars:
+      ansible_become_user: sambauser
+      ansible_become_pass: redhat
+
+   #  - name: Unzip fichero gzip en Desktop
+   #    community.windows.win_unzip:
+   #      src: C:\Users\student\Desktop\kvm.iso.gz
+   #      dest: C:\Users\student\Desktop
+   #      creates: C:\Users\student\Desktop

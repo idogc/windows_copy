@@ -1,0 +1,21 @@
+copy_file_robocopy.yml:        #    become: yes
+copy_file_robocopy.yml:        #    become_method: runas
+copy_file_robocopy.yml:        #    become_flags: logon_type=new_credentials logon_flags=netcredentials_only
+copy_file_robocopy.yml:        #    vars:
+copy_file_robocopy.yml:        #      ansible_become_user: sambauser
+copy_file_robocopy.yml:        #      ansible_become_pass: redhat
+copy_file_robocopy.yml:        #
+copy_file_smb.yml:    # Revisar - no se puede utilizar con una sesion no interactiva tipo WinRM
+copy_file_smb.yml:    #  - name: Mount Samba share
+copy_file_smb.yml:    #    community.windows.win_mapped_drive:
+copy_file_smb.yml:    #      letter: Z
+copy_file_smb.yml:    #      path: \\172.25.250.9\test
+copy_file_smb.yml:    #      username: sambauser
+copy_file_smb.yml:    #      password: redhat
+copy_file_smb.yml:    #      state: present
+copy_file_smb.yml:    #
+copy_file_smb.yml:   #  - name: Unzip fichero gzip en Desktop
+copy_file_smb.yml:   #    community.windows.win_unzip:
+copy_file_smb.yml:   #      src: C:\Users\student\Desktop\kvm.iso.gz
+copy_file_smb.yml:   #      dest: C:\Users\student\Desktop
+copy_file_smb.yml:   #      creates: C:\Users\student\Desktop

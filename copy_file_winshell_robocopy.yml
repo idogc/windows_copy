@@ -1,0 +1,8 @@
+---
+- name: Sincronizar directorios usando Robocopy
+  hosts: all
+  tasks:
+
+    - name: Copiar archivos de origen a destino
+      ansible.windows.win_shell: |
+        robocopy "\\172.25.250.9\test" "C:\Users\student\Desktop" kvm.iso.gz
