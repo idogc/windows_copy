@@ -16,7 +16,7 @@
   - name: Copia desde el recurso samba
     ansible.windows.win_copy:
       src: \\172.25.250.9\test\kvm.iso.gz
-      dest: C:\Users\student\Desktop\kvm.iso.gz
+      dest: C:\Users\devops\Desktop\kvm.iso.gz
       remote_src: true
     become: yes
     become_method: runas
@@ -27,6 +27,6 @@
 
    #  - name: Unzip fichero gzip en Desktop
    #    community.windows.win_unzip:
-   #      src: C:\Users\student\Desktop\kvm.iso.gz
-   #      dest: C:\Users\student\Desktop
-   #      creates: C:\Users\student\Desktop
+   #      src: C:\Users\devops\Desktop\kvm.iso.gz
+   #      dest: C:\Users\devops\Desktop
+   #      creates: C:\Users\devops\Desktop

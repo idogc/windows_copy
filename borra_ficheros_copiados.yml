@@ -1,0 +1,7 @@
+- name: Borra los ficheros copiados
+  hosts: all
+  tasks:
+    - name: Borra los ficheros generados en el Desktop
+      ansible.windows.win_file:
+        path: C:\Users\devops\Desktop\kvm.iso.gz
+        state: absent

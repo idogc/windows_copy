@@ -16,6 +16,6 @@ copy_file_smb.yml:    #      state: present
 copy_file_smb.yml:    #
 copy_file_smb.yml:   #  - name: Unzip fichero gzip en Desktop
 copy_file_smb.yml:   #    community.windows.win_unzip:
-copy_file_smb.yml:   #      src: C:\Users\student\Desktop\kvm.iso.gz
-copy_file_smb.yml:   #      dest: C:\Users\student\Desktop
-copy_file_smb.yml:   #      creates: C:\Users\student\Desktop
+copy_file_smb.yml:   #      src: C:\Users\devops\Desktop\kvm.iso.gz
+copy_file_smb.yml:   #      dest: C:\Users\devops\Desktop
+copy_file_smb.yml:   #      creates: C:\Users\devops\Desktop

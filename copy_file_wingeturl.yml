@@ -6,4 +6,4 @@
   - name: Descarga el fichero desde url httpd
     ansible.windows.win_get_url:
       url: http://172.25.250.9/kvm.iso.gz
-      dest: C:\Users\student\Desktop\kvm.iso.gz
+      dest: C:\Users\devops\Desktop\kvm.iso.gz

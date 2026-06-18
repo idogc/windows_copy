@@ -6,12 +6,12 @@
   - name: Sync one file from a remote UNC path in recursive and purging mode, specifying additional special flags
     community.windows.win_robocopy:
       src: \\172.25.250.9\test
-      dest: C:\Users\student\Desktop
+      dest: C:\Users\devops\Desktop
       flags: kvm.iso.gz /Z
-        #    become: yes
-        #    become_method: runas
-        #    become_flags: logon_type=new_credentials logon_flags=netcredentials_only
-        #    vars:
-        #      ansible_become_user: sambauser
-        #      ansible_become_pass: redhat
-        #
+    become: yes
+    become_method: runas
+    become_flags: logon_type=new_credentials logon_flags=netcredentials_only
+    vars:
+      ansible_become_user: sambauser
+      ansible_become_pass: redhat
+
